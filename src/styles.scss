@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+
+:root {
+--primary-color: #440c55;
+--secondary-color: #a592ab;
+--background-color: #eee;
+--accent-color: #f2115c;
+--white: #fff;
+--black: #232A42;
+--blue: #1F415F;
+--box-shadow-color: rgba(0, 0, 0, 0.2);
+--invert-0: invert(0);
+--invert-1: invert(1);
+--border: .2rem var(--black);
+--border-radius-base: 8px;
+--box-shadow: 0 0 1rem var(--box-shadow-color);
+--transition-base: all 0.2s ease-in-out;
+}
+
+.dark-theme {
+--background-color: #121212;
+--white: #232A42;
+--black: #fff;
+--box-shadow-color: rgba(255, 255, 255, 0.1);
+--invert-0: invert(1);
+--invert-1: invert(0);
+  --box-shadow:0 0 1rem var(--box-shadow-color);
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  color: var(--black);
+  background-color: var(--white);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}

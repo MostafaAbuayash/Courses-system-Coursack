@@ -1,0 +1,142 @@
+.login {
+  position: relative;
+  background-color: var(--background-color);
+  max-width: fit-content;
+  border-radius: 1.56rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: var(--box-shadow);
+}
+
+h2 {
+  text-align: center;
+  color: var(--blue);
+}
+
+h4 {
+  color: var(--accent-color);
+  text-align: center;
+}
+
+@keyframes shake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-0.3rem); }
+  40%  { transform: translateX(0.3rem); }
+  60%  { transform: translateX(-0.3rem); }
+  80%  { transform: translateX(0.3rem); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.4s ease;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 0.6rem;
+  margin: 0.6rem;
+  background-color: transparent;
+  border-bottom: 0.05rem solid #ccc;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 19rem;
+}
+
+i {
+  color: var(--blue);
+  position: absolute;
+  right: 1.2rem;
+  transform: translateY(140%);
+}
+
+.rememberme {
+  color: #757575;
+  display: flex;
+  margin-left: 1rem;
+}
+
+.a1 {
+  color:#ccc;
+  position: absolute;
+  right: 1.2rem;
+  text-decoration: none;
+  transition: 0.6s ease;
+}
+
+.a1:hover {
+  color: var(--blue);
+}
+
+
+button {
+  background-color: var(--blue);
+  color: white;
+  padding: 0.4rem;
+  border-radius: 1.56rem;
+  width: 20%;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  margin-top: 1.5rem;
+  transition: 1s ease;
+}
+
+button:hover {
+  color: var(--accent-color);
+}
+
+p {
+  color: #4b4b4b;
+  text-align: center;
+  padding-bottom: .5rem;
+}
+
+.a2 {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 1s ease;
+}
+
+.a2:hover {
+  color: var(--accent-color);
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-box {
+  background: var(--background-color);
+  border-radius: 1.56rem;
+  box-shadow: var(--box-shadow);
+  padding: 1rem 2.5rem 1rem 2.5rem;
+  color: var(--blue);
+}
+
+.close {
+  background-color: var(--blue);
+  color: white;
+  border-radius: 1.56rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.6s ease;
+}
+
+.close:hover {
+  color: var(--accent-color);
+}

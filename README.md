@@ -1,46 +1,27 @@
-# Student-Complaint-Ticketing-and-Resolution-System
-depi Angular Frontend    ((CLS ONL3_SWD3_S1))
+# PlateformCourses
 
-## 📖 الوصف
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
 
-**نظام شكاوى الطلاب وتسجيلها وحلها** هي منصة متكاملة لإدارة ومتابعة شكاوي الطلاب. يوفر النظام واجهة سهلة الاستخدام للطلبه لتقديم مشاكلهم للإداره، مع نظام كامل لإدارة .
+## Development server
 
-### 🎯 الميزات الرئيسية:
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-- **إدارة الشكاوي**: تنظيم الشكاوي في فئات مختلفه لكل إداره مختلفه
-- **نظام المستخدمين**: صفحة الطلبه لتقديم شكاويهم
-- **إدارة الشكاوى**: إتاحة الطلبه لمراجعة ومتابعة شكاويهم
-- **إدارة الشكاوى من جهة الإدارة**: تتبع شكاوى الطلبه
+## Code scaffolding
 
-## 🛠️ التقنيات المستخدمة 
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-- **إطار العمل**:
-- **قاعدة البيانات**:
-- **الواجهة الأمامية**: HTML, CSS, JavaScript
-- **نظام التسجيل**:
+## Build
 
-### إستنساخ المشروع:
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-```
-https://downgit.github.io/#/home?url=https://github.com/MostafaAbuayash/Student-Complaint-Ticketing-and-Resolution-System
-```
+## Running unit tests
 
-## 📑 الإستخدام
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-- للوصول لقاعدة البيانات
+## Running end-to-end tests
 
-```
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-```
+## Further help
 
-- للوصول لصفحة الأدمن
-
-```
-
-```
-
-- للوصول لصفحة المستخدم
-
-```
-
-```
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

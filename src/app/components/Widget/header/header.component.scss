@@ -1,0 +1,59 @@
+.header {
+  position: sticky;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  margin: 0 auto;
+  padding: .5rem;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+}
+
+.logo{
+  height: 2.5rem;
+  border-radius: 3.125rem;
+}
+
+.Account-btn{
+  color: var(--black);
+  text-decoration: none;
+  margin: .4rem auto auto 2rem;
+  background-color: lightblue;
+  border-radius: 3.125rem;
+  padding: 0 1rem;
+  font-weight: bold;
+}
+
+.navbar {
+  margin-left: auto;
+}
+
+.search{
+  color: var(--black);
+  margin-left: auto;
+  border: thin solid;
+  border-radius: .3rem;
+  padding: .3rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 13rem;
+  text-align: left;
+}
+
+.search kbd{
+  border-radius: .2rem;
+  border: thin solid;
+  padding: 0 .3rem;
+  font-weight: bold;
+  font-size: .9rem;
+}
+
+.navbar a{
+  color: var(--black);
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin:0 1rem;
+  font-weight: bold;
+}

@@ -1,0 +1,19 @@
+<div class="reset">
+  <h2>RESET PASSWORD</h2>
+  <h4 id="errorMessage" style="display: none;">Please fill the input fields before proceeding</h4>
+  <form id="resetForm">
+    <div>
+      <i class="fa-solid fa-user"></i>
+      <input type="email" id="email" name="email" placeholder="Email" [(ngModel)]="email" required>
+    </div>
+    <div class="btn-container">
+      <button type="submit" class="btn" id="loginbtn" (click)="showPopup($event)">Reset</button>
+    </div>
+  </form>
+</div>
+<div class="popup" *ngIf="popupVisible">
+  <div class="popup-box">
+    <p>An email has been sent to you! Update then <a routerLink="/login" class="a1">Log In</a></p>
+    <button class="close" (click)="closePopup()">Close</button>
+  </div>
+</div>

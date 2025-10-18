@@ -1,0 +1,31 @@
+<div class="login">
+  <h2>LOGIN</h2>
+  <h4 id="errorMessage" style="display: none;">Please fill the input fields before proceeding</h4>
+  <form id="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <i class="fa-solid fa-user"></i>
+      <input type="text" id="username" name="username" placeholder="Username" [(ngModel)]="username" required>
+    </div>
+    <div>
+      <i class="fa-solid fa-lock"></i>
+      <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="password" minlength="10" required>
+    </div>
+    <div class="rememberme">
+      <input id="rememberme" type="checkbox" name="rememberme" value="Remember me">
+      <label for="rememberme">Remember me</label>
+      <a href="#" class="a1" routerLink="/reset">Forgot Password?</a>
+    </div>
+    <div class="btn-container">
+      <button type="submit" class="btn" id="loginbtn">Log In</button>
+    </div>
+    <div>
+      <p>Don't have an Account? <a routerLink="/register" class="a2">Sign up</a></p>
+    </div>
+  </form>
+</div>
+<div class="popup" *ngIf="popupVisible">
+  <div class="popup-box">
+    <p>Logged in successfully, Welcome {{ username }}!</p>
+    <button class="close" (click)="closePopup()">Close</button>
+  </div>
+</div>
