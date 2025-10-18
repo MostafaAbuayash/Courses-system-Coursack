@@ -1,12 +1,16 @@
+.reset-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding-bottom: 5rem; /* Pushes content up from the footer */
+}
+
 .reset {
   position: relative;
   background-color: var(--background-color);
   max-width: fit-content;
   border-radius: 1.56rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   box-shadow: var(--box-shadow);
 }
 

@@ -1,30 +1,32 @@
-<div class="register">
-  <h2>REGISTER</h2>
-  <h4 id="errorMessage" style="display: none;">Please fill the input fields before proceeding</h4>
-  <form id="registerForm">
-    <div>
-      <i class="fa-solid fa-user"></i>
-      <input type="email" id="email" name="email" placeholder="Email" [(ngModel)]="email" required>
+<div class="register-page">
+  <div class="register">
+    <h2>REGISTER</h2>
+    <h4 id="errorMessage" style="display: none;">Please fill the input fields before proceeding</h4>
+    <form id="registerForm">
+      <div>
+        <i class="fa-solid fa-user"></i>
+        <input type="email" id="email" name="email" placeholder="Email" [(ngModel)]="email" required>
+      </div>
+      <div>
+        <i class="fa-solid fa-user-plus"></i>
+        <input type="text" id="username" name="username" placeholder="Username" [(ngModel)]="username" required>
+      </div>
+      <div>
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="password" minlength="10" required>
+      </div>
+      <div class="btn-container">
+        <button type="submit" class="btn" id="loginbtn" (click)="showPopup($event)">Sign Up</button>
+      </div>
+      <div>
+        <p>Already have an account? <a routerLink="/login" class="a1">Log In</a></p>
+      </div>
+    </form>
+  </div>
+  <div class="popup" *ngIf="popupVisible">
+    <div class="popup-box">
+      <p>Signed up successfully! You can log in now.</p>
+      <button class="close" (click)="closePopup()">Close</button>
     </div>
-    <div>
-      <i class="fa-solid fa-user-plus"></i>
-      <input type="text" id="username" name="username" placeholder="Username" [(ngModel)]="username" required>
-    </div>
-    <div>
-      <i class="fa-solid fa-lock"></i>
-      <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="password" minlength="10" required>
-    </div>
-    <div class="btn-container">
-      <button type="submit" class="btn" id="loginbtn" (click)="showPopup($event)">Sign Up</button>
-    </div>
-    <div>
-      <p>Already have an account? <a routerLink="/login" class="a1">Log In</a></p>
-    </div>
-  </form>
-</div>
-<div class="popup" *ngIf="popupVisible">
-  <div class="popup-box">
-    <p>Signed up successfully! You can log in now.</p>
-    <button class="close" (click)="closePopup()">Close</button>
   </div>
 </div>
