@@ -1,0 +1,36 @@
+.about {
+  display: flex;
+  gap: 2rem;
+}
+
+.about > div {
+  flex: 1;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+
+span {
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: font-size 0.2s;
+  animation: attention 1s infinite alternate;
+}
+
+span:hover {
+  font-size: 1.6rem;
+}
+
+@keyframes attention {
+  from {
+    color: var(--primary-color);
+  }
+  to {
+    color: var(--accent-color);
+  }
+}
+
+img {
+  max-width: 100%;
+}
