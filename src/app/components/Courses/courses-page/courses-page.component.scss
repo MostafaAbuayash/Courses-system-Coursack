@@ -29,3 +29,32 @@
 .bg-Acting {
   background-color: #bebec6;
 }
+.row-icons .col-12 .card:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+  transition: 0.3s;
+}
+.card-rec p {
+  font-size: 10px;
+}
+.my-card {
+  border-radius: 12px;
+  overflow: hidden; /* ده أهم سطر */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.my-card:hover {
+  transform: translateY(-5px);
+}
+.my-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px; /* لو overflow مش كفاية */
+  object-fit: cover;
+}
+a {
+  text-decoration: none;
+  color: black !important;
+}
