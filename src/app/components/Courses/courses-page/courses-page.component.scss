@@ -1,0 +1,60 @@
+.bg-draw {
+  background-color: #ced5fa;
+}
+.bg-draw i {
+  color: #6173f1;
+}
+.bg-Business {
+  background-color: #b3efea;
+}
+.bg-Business i {
+  color: #2bc1b4;
+}
+.bg-Marketing {
+  background-color: #fcddb4;
+}
+.bg-Marketing i {
+  color: #f5a623;
+}
+.bg-Photography {
+  background-color: #ffd6e8;
+}
+.bg-Photography i {
+  color: #ff6f9c;
+}
+.card-shadw {
+  border: 0;
+  box-shadow: 0px 18px 19px 4px rgba(0, 0, 0, 0.1);
+}
+.bg-Acting {
+  background-color: #bebec6;
+}
+.row-icons .col-12 .card:hover {
+  cursor: pointer;
+  transform: translateY(-10px);
+  transition: 0.3s;
+}
+.card-rec p {
+  font-size: 10px;
+}
+.my-card {
+  border-radius: 12px;
+  overflow: hidden; /* ده أهم سطر */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.my-card:hover {
+  transform: translateY(-5px);
+}
+.my-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px; /* لو overflow مش كفاية */
+  object-fit: cover;
+}
+a {
+  text-decoration: none;
+  color: black !important;
+}

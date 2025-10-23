@@ -1,0 +1,119 @@
+.footer {
+  background-color: var(--primary-color);
+  padding: 2.5rem 1.25rem;
+  color: var(--white);
+  margin-top: 2.5rem;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+img.logo {
+  height: 3.125rem;
+  padding-right: 0.3125rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--white);
+  border-left: 0.0625rem solid var(--secondary-color);
+  padding-left: 0.3125rem;
+}
+
+
+p {
+  margin: 0;
+}
+
+.subscribe {
+  display: flex;
+  gap: 0.625rem;
+  width: 100%;
+  max-width: 28.125rem;
+  align-items: center;
+}
+
+.email {
+  flex-grow: 1;
+  padding: 0.9375rem;
+  max-height: 0.3125rem;
+  font-size: 1rem;
+  border-radius: 1.5625rem;
+  border: 0.0625rem solid lightgray;
+  color: var(--white);
+  background-color: transparent;
+  transition: flex-grow 0.5s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+}
+
+.subscribed-message {
+  opacity: 0;
+  width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.subscribe.subscribed .email {
+  flex-grow: 0.4;
+}
+
+.subscribe.subscribed .subscribed-message {
+  opacity: 1;
+  width: 5.625rem;
+}
+
+.btn {
+  padding: 0.5625rem 0.9375rem;
+  font-size: 1rem;
+  border-radius: 1.5625rem;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn:disabled {
+  background-color: #0057b380;
+  cursor: not-allowed;
+}
+
+.btn:not(:disabled):hover {
+  cursor: pointer;
+  background-color: #007bff;
+}
+
+.info {
+  display: flex;
+  gap: 1.875rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: color .5s ease-in-out, text-decoration-color .5s ease-in-out;
+}
+
+a:hover {
+  color: #6bc6ff;
+  text-decoration-color: #6bc6ff;
+}
+
+.text-muted {
+  font-size: 0.875rem;
+}

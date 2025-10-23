@@ -1,0 +1,19 @@
+<footer class="footer">
+  <div class="flex">
+    <div class="logo">
+      <a class="logo"><img src="assets/images/logo.empty.png" alt="Logo" class="logo"/></a>
+      <h2>Coursack</h2>
+    </div>
+    <p>Subscribe to get News on the latest Courses!</p>
+    <div class="subscribe" [class.subscribed]="isSubscribed">
+      <input type="email" class="email" id="email" name="email" placeholder="Enter your email" [(ngModel)]="email"/>
+      <button type="submit" class="btn" id="loginbtn" [disabled]="!email" (click)="subscribe()">Subscribe</button>
+      <span class="subscribed-message">subscribed!</span>
+    </div>
+    <div class="info">
+      <a href="">Privacy Policy</a>
+      <a href="">Terms of Service</a>
+    </div>
+    <span class="text-muted">2025 Coursack Platform© . All rights reserved!</span>
+  </div>
+</footer>
