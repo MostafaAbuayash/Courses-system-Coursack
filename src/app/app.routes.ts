@@ -9,6 +9,8 @@ import { StudentaccComponent } from './components/Auth/studentacc/studentacc.com
 import { SearchComponent } from './components/search/search.component';
 import { ListOFCoursesComponent } from './components/Courses/list-of-courses/list-of-courses.component';
 import { CoursesPageComponent } from './components/Courses/courses-page/courses-page.component';
+import { AssignmentComponent } from './components/assignment/assignment.component';
+import { StudentPageComponent } from './components/student-page/student-page.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,4 +23,6 @@ export const routes: Routes = [
   { path: 'student', component: StudentaccComponent },
   { path: 'courses', component: CoursesPageComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'assignments', component: AssignmentComponent },
+  { path: 'myaccount', component: StudentPageComponent },
 ];

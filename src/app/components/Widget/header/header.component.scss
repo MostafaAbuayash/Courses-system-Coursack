@@ -3,57 +3,58 @@
   background-color: var(--white);
   box-shadow: var(--box-shadow);
   margin: 0 auto;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
-.flex{
+.flex {
   display: flex;
   align-items: center;
 }
 
-.logo{
+.logo {
   height: 2.5rem;
   border-radius: 3.125rem;
 }
 
-.Account-btn{
-  color: var(--black);
-  text-decoration: none;
-  margin: .4rem auto auto 2rem;
-  background-color: lightblue;
-  border-radius: 3.125rem;
-  padding: 0 1rem;
-  font-weight: bold;
+.Account-btn {
+  color: var(--black) !important;
+  text-decoration: none !important;
+  margin: 0.4rem auto auto 2rem !important;
+  background-color: lightblue !important;
+  border-radius: 3.125rem !important;
+  padding: 0 1rem !important;
+  font-weight: bold !important;
+  border: 0 !important;
 }
 
 .navbar {
   margin-left: auto;
 }
 
-.search{
+.search {
   color: var(--black);
   margin-left: auto;
   border: thin solid;
-  border-radius: .3rem;
-  padding: .3rem;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
   font-weight: bold;
   cursor: pointer;
   width: 13rem;
   text-align: left;
 }
 
-.search kbd{
-  border-radius: .2rem;
+.search kbd {
+  border-radius: 0.2rem;
   border: thin solid;
-  padding: 0 .3rem;
+  padding: 0 0.3rem;
   font-weight: bold;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
-.navbar a{
-  color: var(--black);
-  text-decoration: none;
-  font-size: 1.1rem;
-  margin:0 1rem;
-  font-weight: bold;
+.navbar a {
+  color: var(--black) !important;
+  text-decoration: none !important;
+  font-size: 1.1rem !important;
+  margin: 0 1rem !important;
+  font-weight: bold !important;
 }
