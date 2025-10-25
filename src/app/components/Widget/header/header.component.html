@@ -1,76 +1,27 @@
 <header class="header">
   <section class="flex">
-    <a class="logo" routerLink="/home"
-      ><img src="assets/images/logo.png" alt="Logo" class="logo"
-    /></a>
-    <a class="Account-btn">f</a>
+    <a class="logo" routerLink="/home">
+      <img src="assets/images/logo.png" alt="Logo" class="logo" />
+    </a>
 
-    <div class="btn-group Account-btn">
-      <button
-        type="button"
-        class="btn btn-secondary dropdown-toggle Account-btn"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        Account
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end">
-        @if (!isLogin) {
-        <li>
-          <a routerLink="/login" class="dropdown-item" type="button">Login</a>
-        </li>
-        <li>
-          <a routerLink="/register" class="dropdown-item" type="button"
-            >Sgin up</a
-          >
-        </li>
-        }@else{
-        <li><button class="dropdown-item" type="button">Profile</button></li>
-        <li><button class="dropdown-item" type="button">Settings</button></li>
-        <li>
-          <a class="dropdown-item" type="button">Assignments</a>
-        </li>
-        <li>
-          <button class="dropdown-item" type="button">Courses</button>
-        </li>
+    <button class="menu-btn" (click)="toggleMenu()">☰</button>
 
-        <li><hr class="dropdown-divider" /></li>
-        <li><button class="dropdown-item" type="button">Logout</button></li>
-        }
-      </ul>
-    </div>
-    <nav class="navbar">
+    <nav class="navbar" [class.active]="menuActive">
+      <button class="close-btn" (click)="toggleMenu()">✕</button>
       <button class="search" routerLink="/search">
-        <i class="fa-duotone fa-solid fa-magnifying-glass"></i>Type
-        <kbd class="search/">/</kbd> to search...
+        <i class="fa-duotone fa-solid fa-magnifying-glass"></i>
+        Type <kbd>/</kbd> to search...
       </button>
       <a routerLink="/home">Home</a>
       <a routerLink="/courses">Courses</a>
+      <a routerLink="/manageaccounts">Manage Accounts</a>
+      <a routerLink="/informationPanel">Information Panel</a>
+      <a routerLink="/adminAccount">Admin Account</a>
       <a routerLink="/about">About Us</a>
+      <a routerLink="/Contactus">Contact Us</a>
       <a routerLink="/contact">Get in Touch</a>
     </nav>
+
+    <a routerLink="/login" class="Account-btn">Account</a>
   </section>
 </header>
-<a class="logo" routerLink="/home">
-  <img src="assets/images/logo.png" alt="Logo" class="logo" />
-</a>
-
-<button class="menu-btn" (click)="toggleMenu()">☰</button>
-
-<nav class="navbar" [class.active]="menuActive">
-  <button class="close-btn" (click)="toggleMenu()">✕</button>
-  <button class="search" routerLink="/search">
-    <i class="fa-duotone fa-solid fa-magnifying-glass"></i>
-    Type <kbd>/</kbd> to search...
-  </button>
-  <a routerLink="/home">Home</a>
-  <a routerLink="/courses">Courses</a>
-  <a routerLink="/manageaccounts">Manage Accounts</a>
-  <a routerLink="/informationPanel">Information Panel</a>
-  <a routerLink="/adminAccount">Admin Account</a>
-  <a routerLink="/about">About Us</a>
-  <a routerLink="/Contactus">Contact Us</a>
-  <a routerLink="/contact">Get in Touch</a>
-</nav>
-
-<a routerLink="/login" class="Account-btn">Account</a>
