@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "plateform-courses",
-=======
-  "name": "courses-system-coursack",
->>>>>>> 226235ff2605fd2ef25be326218fc1aa77b1914f
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -22,12 +18,9 @@
     "@angular/platform-browser": "^17.3.0",
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/router": "^17.3.0",
-<<<<<<< HEAD
     "@fortawesome/fontawesome-free": "^7.1.0",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
-=======
->>>>>>> 226235ff2605fd2ef25be326218fc1aa77b1914f
     "bootstrap": "^5.3.8",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -37,10 +30,7 @@
     "@angular-devkit/build-angular": "^17.3.17",
     "@angular/cli": "^17.3.17",
     "@angular/compiler-cli": "^17.3.0",
-<<<<<<< HEAD
     "@types/aos": "^3.0.7",
-=======
->>>>>>> 226235ff2605fd2ef25be326218fc1aa77b1914f
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",

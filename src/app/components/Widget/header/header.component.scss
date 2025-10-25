@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 .header {
   position: sticky;
   background-color: var(--white);
   box-shadow: var(--box-shadow);
   margin: 0 auto;
   padding: 0.5rem;
-=======
+}
 :root {
   --white: #ffffff;
   --black: #222;
@@ -22,16 +21,12 @@ header {
   box-shadow: var(--box-shadow);
   z-index: 999;
   padding: 0.5rem 1rem;
->>>>>>> 226235ff2605fd2ef25be326218fc1aa77b1914f
 }
 
 .flex {
   display: flex;
   align-items: center;
-<<<<<<< HEAD
-=======
   justify-content: space-between;
->>>>>>> 226235ff2605fd2ef25be326218fc1aa77b1914f
 }
 
 .logo {
@@ -40,20 +35,6 @@ header {
 }
 
 .Account-btn {
-<<<<<<< HEAD
-  color: var(--black) !important;
-  text-decoration: none !important;
-  margin: 0.4rem auto auto 2rem !important;
-  background-color: lightblue !important;
-  border-radius: 3.125rem !important;
-  padding: 0 1rem !important;
-  font-weight: bold !important;
-  border: 0 !important;
-}
-
-.navbar {
-  margin-left: auto;
-=======
   color: var(--black);
   text-decoration: none;
   margin-left: 1rem;
@@ -86,57 +67,34 @@ header {
 
 .navbar a:hover {
   color: var(--blue);
->>>>>>> 226235ff2605fd2ef25be326218fc1aa77b1914f
 }
 
 .search {
   color: var(--black);
-<<<<<<< HEAD
-  margin-left: auto;
-  border: thin solid;
-  border-radius: 0.3rem;
-  padding: 0.3rem;
-=======
   border: thin solid #ccc;
   border-radius: 0.3rem;
   padding: 0.3rem;
   margin-right: 1rem;
->>>>>>> 226235ff2605fd2ef25be326218fc1aa77b1914f
   font-weight: bold;
   cursor: pointer;
   width: 13rem;
   text-align: left;
-<<<<<<< HEAD
-=======
   background-color: var(--gray);
   transition: 0.3s ease;
 }
 
 .search:hover {
   background-color: var(--light-blue);
->>>>>>> 226235ff2605fd2ef25be326218fc1aa77b1914f
 }
 
 .search kbd {
   border-radius: 0.2rem;
-<<<<<<< HEAD
-  border: thin solid;
-=======
   border: thin solid #ccc;
->>>>>>> 226235ff2605fd2ef25be326218fc1aa77b1914f
   padding: 0 0.3rem;
   font-weight: bold;
   font-size: 0.9rem;
 }
 
-<<<<<<< HEAD
-.navbar a {
-  color: var(--black) !important;
-  text-decoration: none !important;
-  font-size: 1.1rem !important;
-  margin: 0 1rem !important;
-  font-weight: bold !important;
-=======
 /* زرار القائمة (للموبايل) */
 .menu-btn {
   display: none;
@@ -199,5 +157,4 @@ header {
     width: 100%;
     margin-bottom: 1rem;
   }
->>>>>>> 226235ff2605fd2ef25be326218fc1aa77b1914f
 }
