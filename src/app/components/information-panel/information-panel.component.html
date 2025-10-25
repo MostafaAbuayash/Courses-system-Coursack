@@ -1,0 +1,32 @@
+<div class="info-page fade-in">
+  <div class="info-container">
+    <header class="page-header">
+      <h2>Information Panel</h2>
+      <h4>Overview of platform insights and recent updates.</h4>
+    </header>
+
+    <section class="stats-section">
+      <div class="stat-card" *ngFor="let stat of stats">
+        <div class="icon" [innerHTML]="stat.icon"></div>
+        <div class="details">
+          <h3>{{ stat.value }}</h3>
+          <p>{{ stat.label }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="recent-section">
+      <h3>📚 Recent Activities</h3>
+      <ul>
+        <li *ngFor="let activity of activities">
+          <span class="dot"></span>
+          <div class="activity-content">
+            <h5>{{ activity.title }}</h5>
+            <p>{{ activity.description }}</p>
+            <small>{{ activity.time }}</small>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+</div>

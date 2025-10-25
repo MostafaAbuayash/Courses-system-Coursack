@@ -1,0 +1,202 @@
+:host {
+  --blue: #007bff;
+  --accent: #00bfff;
+  --background: #ffffff;
+  --text-color: #333;
+  --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', sans-serif;
+  display: block;
+}
+
+/* Page Layout */
+.accounts-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fbff, #eef6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.accounts-container {
+  background: var(--background);
+  box-shadow: var(--shadow);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 900px;
+  animation: fadeIn 1s ease;
+}
+
+/* Header */
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h2 {
+  color: var(--blue);
+  font-size: 1.9rem;
+}
+
+.page-header h4 {
+  color: #666;
+  font-weight: 400;
+}
+
+/* Table (Desktop) */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.accounts-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.accounts-table thead {
+  background: linear-gradient(90deg, var(--blue), var(--accent));
+  color: white;
+}
+
+.accounts-table th,
+.accounts-table td {
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.accounts-table tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.accounts-table tbody tr:hover {
+  background: #f9fbff;
+  transform: translateY(-2px);
+}
+
+/* Roles & Status */
+.role {
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.role.student {
+  background: rgba(0, 123, 255, 0.1);
+  color: var(--blue);
+}
+
+.role.teacher {
+  background: rgba(0, 191, 255, 0.1);
+  color: var(--accent);
+}
+
+.status {
+  font-weight: bold;
+}
+
+.status.active {
+  color: green;
+}
+
+.status.inactive {
+  color: #dc3545;
+}
+
+.inactive {
+  opacity: 0.6;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0.4rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-toggle {
+  background: var(--blue);
+  color: white;
+}
+
+.btn-toggle:hover {
+  background: var(--accent);
+}
+
+.btn-delete {
+  background: #ff4d4f;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #ff2e2e;
+}
+
+/* Mobile Cards */
+.cards-view {
+  display: none;
+}
+
+.user-card {
+  background: var(--background);
+  box-shadow: var(--shadow);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-4px);
+}
+
+.user-info h3 {
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+}
+
+.user-info p {
+  margin: 0.3rem 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table-wrapper {
+    display: none;
+  }
+
+  .cards-view {
+    display: block;
+  }
+
+  .accounts-container {
+    padding: 1.2rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}

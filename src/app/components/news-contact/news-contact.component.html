@@ -1,0 +1,88 @@
+<div class="contact-page">
+  <div class="contact-card fade-in">
+    <header>
+      <h2>Contact Us</h2>
+      <h4>Select your role to connect directly with students or teachers.</h4>
+    </header>
+
+    <div class="role-selector">
+      <button
+        [class.active]="selectedRole() === 'student'"
+        (click)="selectRole('student')"
+        type="button"
+      >
+        Student
+      </button>
+
+      <button
+        [class.active]="selectedRole() === 'teacher'"
+        (click)="selectRole('teacher')"
+        type="button"
+      >
+        Teacher
+      </button>
+    </div>
+
+    <form (ngSubmit)="submitForm()" novalidate>
+      <div class="input-group">
+        <i class="fa-solid fa-user"></i>
+        <input
+          type="text"
+          placeholder="Full Name"
+          required
+          [value]="fullName()"
+          (input)="onFullNameInput($event)"
+        />
+      </div>
+
+      <div class="input-group">
+        <i class="fa-solid fa-envelope"></i>
+        <input
+          type="email"
+          placeholder="Email Address"
+          required
+          [value]="email()"
+          (input)="onEmailInput($event)"
+        />
+      </div>
+
+      <div class="input-group">
+        <i
+          class="fa-solid"
+          [ngClass]="selectedRole() === 'student' ? 'fa-graduation-cap' : 'fa-chalkboard-user'"
+        ></i>
+        <input
+          type="text"
+          [placeholder]="selectedRole() === 'student' ? 'Interested Course' : 'Teaching Subject'"
+          required
+          [value]="subject()"
+          (input)="onSubjectInput($event)"
+        />
+      </div>
+
+      <div class="input-group textarea-group">
+        <i class="fa-solid fa-comment"></i>
+        <textarea
+          placeholder="Your Message..."
+          rows="5"
+          required
+          [value]="message()"
+          (input)="onMessageInput($event)"
+        ></textarea>
+      </div>
+
+      <div class="btn-container">
+        <button type="submit" [disabled]="!isFormValid()" class="btn">
+          Send Message
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="popup" *ngIf="popupVisible()">
+    <div class="popup-box slide-up">
+      <p>{{ popupMessage() }}</p>
+      <button class="close" (click)="closePopup()">Close</button>
+    </div>
+  </div>
+</div>

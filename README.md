@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # PlateformCourses
+=======
+# CoursesSystemCoursack
+>>>>>>> 226235ff2605fd2ef25be326218fc1aa77b1914f
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
 

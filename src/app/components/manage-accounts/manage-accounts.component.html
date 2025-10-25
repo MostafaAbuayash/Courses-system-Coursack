@@ -1,0 +1,74 @@
+<div class="accounts-page fade-in">
+  <div class="accounts-container">
+    <header class="page-header">
+      <h2>Manage Accounts</h2>
+      <h4>View, activate or remove student and teacher accounts.</h4>
+    </header>
+
+    <!-- Desktop Table -->
+    <div class="table-wrapper">
+      <table class="accounts-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let user of users(); let i = index" [class.inactive]="!user.active">
+            <td>{{ i + 1 }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <span class="role" [class.student]="user.role === 'Student'" [class.teacher]="user.role === 'Teacher'">
+                {{ user.role }}
+              </span>
+            </td>
+            <td>
+              <span class="status" [class.active]="user.active" [class.inactive]="!user.active">
+                {{ user.active ? 'Active' : 'Inactive' }}
+              </span>
+            </td>
+            <td class="actions">
+              <button class="btn btn-toggle" (click)="toggleStatus(user)">
+                {{ user.active ? 'Deactivate' : 'Activate' }}
+              </button>
+              <button class="btn btn-delete" (click)="deleteUser(user)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mobile Cards -->
+    <div class="cards-view">
+      <div class="user-card" *ngFor="let user of users(); let i = index" [class.inactive]="!user.active">
+        <div class="user-info">
+          <h3>{{ user.name }}</h3>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+          <p><strong>Role:</strong> <span class="role" [class.student]="user.role === 'Student'" [class.teacher]="user.role === 'Teacher'">{{ user.role }}</span></p>
+          <p><strong>Status:</strong> 
+            <span class="status" [class.active]="user.active" [class.inactive]="!user.active">
+              {{ user.active ? 'Active' : 'Inactive' }}
+            </span>
+          </p>
+        </div>
+        <div class="actions">
+          <button class="btn btn-toggle" (click)="toggleStatus(user)">
+            {{ user.active ? 'Deactivate' : 'Activate' }}
+          </button>
+          <button class="btn btn-delete" (click)="deleteUser(user)">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
