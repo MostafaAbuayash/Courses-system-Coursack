@@ -2,13 +2,7 @@
   <div class="col-12">
     <h2 class="mb-4">Manage Courses</h2>
   </div>
-  <div class="col-12">
-    <div class="btn-ass d-flex gap-3 w-100 text-center rounded-5">
-      <button class="btn rounded-5 BTN-Assi w-100">Add Course</button>
-      <button class="btn rounded-5 BTN-Assi w-100">Edite Course</button>
-      <button class="btn rounded-5 BTN-Assi w-100">Delete</button>
-    </div>
-  </div>
+
   <!-- Sidebar Buttons -->
   <div class="col-2">
     <div class="btn-ass d-flex flex-column gap-3 w-100 text-center rounded-5">
@@ -76,15 +70,8 @@
 
           @for (item of ReactCourse; track $index) {
           <div class="row g-3">
-            <div class="col-md-12 d-flex gap-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Module Description"
-              />
-            </div>
             @for (item of item.Module; track $index) {
-            <div class="col-md-12">
+            <div class="col-md-12 mt-4 p-4 border rounded-4">
               <h6 class="fw-bold text-secondary">{{ item.title }}</h6>
               <button
                 type="button"
@@ -99,21 +86,24 @@
                   class="d-flex justify-content-between align-items-center mb-3"
                 >
                   <h6 class="fw-bold text-secondary">Add Lesson</h6>
-                  <button
-                    type="button"
-                    class="btn btn-sm btn-outline-primary rounded-5 px-3"
-                  >
-                    + Add Lesson
-                  </button>
                 </div>
 
                 <div class="row g-3">
-                  <div class="col-md-12">
+                  <div class="col-md-12 d-flex gap-3 mb-3">
                     <input
                       type="text"
                       class="form-control"
                       placeholder="Module Title"
+                      #LessonName
+                      name="LessonName"
                     />
+                    <button
+                      type="button"
+                      class="btn btn-sm btn-outline-primary rounded-5 px-3"
+                      (click)="addLesson(item, LessonName.value)"
+                    >
+                      + Add Lesson
+                    </button>
                   </div>
                   <div class="col-md-12">
                     @for (item of item.lesson; track $index) {

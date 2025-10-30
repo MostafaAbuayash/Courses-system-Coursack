@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 interface Lesson {
   id: string;
   title: string;
@@ -29,7 +29,7 @@ interface Course {
 @Component({
   selector: 'app-mange-course',
   standalone: true,
-  imports: [FormsModule, FormsModule],
+  imports: [FormsModule, FormsModule, CommonModule],
   templateUrl: './mange-course.component.html',
   styleUrl: './mange-course.component.scss',
 })
@@ -60,7 +60,7 @@ export class MangeCourseComponent {
     };
     this.ReactCourse[0].Module.push(newModule);
   }
-  addLesson(module: Module) {
+  addLesson(module: Module, title: string) {
     const newLesson: Lesson = {
       id: `lesson_${module.lesson.length + 1}`,
       title: 'New Lesson',
