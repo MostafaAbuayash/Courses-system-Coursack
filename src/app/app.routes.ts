@@ -15,7 +15,7 @@ import { ManageAccountsComponent } from './components/manage-accounts/manage-acc
 import { NewsContactComponent } from './components/news-contact/news-contact.component';
 import { InformationPanelComponent } from './components/information-panel/information-panel.component';
 import { AdminAccountComponent } from './components/admin-account/admin-account.component';
-
+import { MangeCourseComponent } from './components/Courses/mange-course/mange-course.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,4 +34,5 @@ export const routes: Routes = [
   { path: 'Contactus', component: NewsContactComponent },
   { path: 'informationPanel', component: InformationPanelComponent },
   { path: 'adminAccount', component: AdminAccountComponent },
+  { path: 'manageCourses', component: MangeCourseComponent },
 ];

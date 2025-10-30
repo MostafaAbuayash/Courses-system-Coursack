@@ -1,14 +1,134 @@
-<div class="btn-ass row w-100 rounded-5 p-3 mx-auto text-center">
-  <div class="col-3">
-    <button class="btn rounded-5 BTN-Assi pt-0 w-100">semeter1</button>
+<div class="row">
+  <div class="col-12">
+    <h2 class="mb-4">Manage Courses</h2>
   </div>
-  <div class="col-3">
-    <button class="btn rounded-5 BTN-Assi pt-0 w-100">semeter1</button>
+  <div class="col-12">
+    <div class="btn-ass d-flex gap-3 w-100 text-center rounded-5">
+      <button class="btn rounded-5 BTN-Assi w-100">Add Course</button>
+      <button class="btn rounded-5 BTN-Assi w-100">Edite Course</button>
+      <button class="btn rounded-5 BTN-Assi w-100">Delete</button>
+    </div>
   </div>
-  <div class="col-3">
-    <button class="btn rounded-5 BTN-Assi w-100">semeter1</button>
+  <!-- Sidebar Buttons -->
+  <div class="col-2">
+    <div class="btn-ass d-flex flex-column gap-3 w-100 text-center rounded-5">
+      <button class="btn rounded-5 BTN-Assi w-100">Curriculum</button>
+      <button class="btn rounded-5 BTN-Assi w-100">Users</button>
+      <button class="btn rounded-5 BTN-Assi w-100">Content</button>
+      <button class="btn rounded-5 BTN-Assi w-100">Instructor</button>
+      <button class="btn rounded-5 BTN-Assi w-100">Pricing</button>
+    </div>
   </div>
-  <div class="col-3">
-    <button class="btn rounded-5 BTN-Assi pt-0 w-100">semeter1</button>
+
+  <!-- Main Content Area -->
+  <div class="col-10">
+    <div class="p-4 bg-light rounded-4 shadow-sm">
+      <form class="course-form">
+        <!-- Course Title and Thumbnail -->
+        <div class="mb-4">
+          <h4 class="mb-3 text-secondary fw-bold">Add New Course</h4>
+          <div class="row g-3">
+            <div class="col-md-8">
+              <label for="courseTitle" class="form-label fw-semibold"
+                >Course Title</label
+              >
+              <input
+                id="courseTitle"
+                type="text"
+                class="form-control"
+                placeholder="Enter course title"
+                [(ngModel)]="ReactCourse[0].title"
+                name="coursetitle"
+              />
+            </div>
+            <div class="col-md-4">
+              <label for="courseThumbnail" class="form-label fw-semibold"
+                >Thumbnail</label
+              >
+              <input id="courseThumbnail" type="file" class="form-control" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Module Section -->
+        @for (item of ReactCourse; track $index) {
+        <div class="module-section mt-4">
+          <div class="row g-3 align-items-center">
+            <div class="col-md-8">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Module Title"
+                #ModuleName
+                name="ModuleName"
+              />
+            </div>
+            <div class="col-md-4 text-end">
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-primary rounded-5 px-3"
+                (click)="addModule(ModuleName.value)"
+              >
+                + Add Module
+              </button>
+            </div>
+          </div>
+
+          @for (item of ReactCourse; track $index) {
+          <div class="row g-3">
+            <div class="col-md-12 d-flex gap-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Module Description"
+              />
+            </div>
+            @for (item of item.Module; track $index) {
+            <div class="col-md-12">
+              <h6 class="fw-bold text-secondary">{{ item.title }}</h6>
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-danger rounded-5 px-3"
+                (click)="deleteModule($index)"
+              >
+                🗑 Delete
+              </button>
+
+              <div class="module-section m-5 p-4 border rounded-4">
+                <div
+                  class="d-flex justify-content-between align-items-center mb-3"
+                >
+                  <h6 class="fw-bold text-secondary">Add Lesson</h6>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-primary rounded-5 px-3"
+                  >
+                    + Add Lesson
+                  </button>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-md-12">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Module Title"
+                    />
+                  </div>
+                  <div class="col-md-12">
+                    @for (item of item.lesson; track $index) {
+                    <h6 class="fw-bold text-secondary">{{ item.title }}</h6>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+            }
+          </div>
+          }
+        </div>
+        }
+      </form>
+    </div>
   </div>
 </div>
