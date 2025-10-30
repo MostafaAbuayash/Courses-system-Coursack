@@ -4,7 +4,7 @@
   --background: #ffffff;
   --text-color: #333;
   --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   display: block;
 }
 
@@ -101,6 +101,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-edit:hover {
@@ -200,13 +201,25 @@
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideIn {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Responsive */
