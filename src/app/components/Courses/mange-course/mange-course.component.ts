@@ -42,7 +42,8 @@ export class MangeCourseComponent {
       language: 'en',
       level: '',
       instructors: ['user_123'],
-      thumbnail_url: 'https://cdn.example.com/courses/987/thumb.jpg',
+      thumbnail_url:
+        'https://pbs.twimg.com/profile_images/1217566226827759616/hM6lnfw8_400x400.jpg',
       price: 0,
       Module: [],
       lessons_count: 0,
@@ -52,6 +53,22 @@ export class MangeCourseComponent {
       updated_at: '2025-10-30T09:00:00Z',
     },
   ];
+
+  saveCourse() {
+    // استرجاع البيانات القديمة من localStorage
+    const existingCourses = JSON.parse(
+      localStorage.getItem('ReactCourse') || '[]'
+    );
+
+    // إضافة الكورس الحالي إلى المصفوفة
+    existingCourses.push(this.ReactCourse[0]);
+
+    // حفظ البيانات المحدثة في localStorage
+    localStorage.setItem('ReactCourse', JSON.stringify(existingCourses));
+
+    console.log('✅ Course saved successfully!');
+    console.log(localStorage.getItem('ReactCourse'));
+  }
   addModule(title: string) {
     const newModule: Module = {
       id: `module_${this.ReactCourse[0].Module.length + 1}`,
@@ -63,11 +80,14 @@ export class MangeCourseComponent {
   addLesson(module: Module, title: string) {
     const newLesson: Lesson = {
       id: `lesson_${module.lesson.length + 1}`,
-      title: 'New Lesson',
+      title: title || 'New Lesson',
     };
     module.lesson.push(newLesson);
   }
   deleteModule(index: number) {
     this.ReactCourse[0].Module.splice(index, 1);
+  }
+  deleteLesson(moduleIndex: number, lessonIndex: number) {
+    this.ReactCourse[0].Module[moduleIndex].lesson.splice(lessonIndex, 1);
   }
 }

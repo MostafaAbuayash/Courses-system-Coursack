@@ -93,7 +93,7 @@
                     <input
                       type="text"
                       class="form-control"
-                      placeholder="Module Title"
+                      placeholder="Lesson Title"
                       #LessonName
                       name="LessonName"
                     />
@@ -107,7 +107,13 @@
                   </div>
                   <div class="col-md-12">
                     @for (item of item.lesson; track $index) {
-                    <h6 class="fw-bold text-secondary">{{ item.title }}</h6>
+
+                    <button class="btn btn-lesson form-control my-2">
+                      <h6 class="fw-bold text-secondary">
+                        {{ item.title }}
+                      </h6>
+                    </button>
+
                     }
                   </div>
                 </div>
@@ -119,6 +125,17 @@
         </div>
         }
       </form>
+    </div>
+    <div class="row">
+      <div class="col-md-6 text-end">
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-primary rounded-5 px-5 py-2"
+          (click)="saveCourse()"
+        >
+          Save
+        </button>
+      </div>
     </div>
   </div>
 </div>
