@@ -37,7 +37,7 @@ export class MangeCourseComponent {
   ReactCourse: Course[] = [
     {
       id: Date.now(),
-      title: 'd',
+      title: '',
       short_description: '',
       language: 'en',
       level: '',
@@ -54,16 +54,29 @@ export class MangeCourseComponent {
     },
   ];
 
-  saveCourse() {
-    // استرجاع البيانات القديمة من localStorage
+  saveCourse(title: string, short_description: string) {
+    const newCourse: Course = {
+      id: Date.now(),
+      title: title,
+      short_description: short_description,
+      language: 'en',
+      level: '',
+      instructors: ['user_123'],
+      thumbnail_url: 'https://cdn.example.com/default-thumb.jpg',
+      price: 0,
+      Module: [],
+      lessons_count: 0,
+      published_at: null,
+      created_by: 'admin_1',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
     const existingCourses = JSON.parse(
       localStorage.getItem('ReactCourse') || '[]'
     );
 
-    // إضافة الكورس الحالي إلى المصفوفة
     existingCourses.push(this.ReactCourse[0]);
 
-    // حفظ البيانات المحدثة في localStorage
     localStorage.setItem('ReactCourse', JSON.stringify(existingCourses));
 
     console.log('✅ Course saved successfully!');

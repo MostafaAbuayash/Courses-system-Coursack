@@ -6,8 +6,14 @@ import { MangeCourseComponent } from '../mange-course/mange-course.component';
 @Component({
   selector: 'app-courses-page',
   standalone: true,
-  imports: [ListOFCoursesComponent, MangeCourseComponent],
+  imports: [ListOFCoursesComponent],
   templateUrl: './courses-page.component.html',
   styleUrl: './courses-page.component.scss',
 })
-export class CoursesPageComponent {}
+export class CoursesPageComponent {
+  exititngCourses: any = [];
+  constructor() {
+    const savedData = localStorage.getItem('ReactCourse');
+    this.exititngCourses = savedData ? JSON.parse(savedData) : [];
+  }
+}

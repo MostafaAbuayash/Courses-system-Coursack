@@ -1,5 +1,4 @@
 <div class="container p-5">
-  <app-mange-course></app-mange-course>
   <app-list-of-courses></app-list-of-courses>
   <div class="row row-icons py-5 gy-5 justify-content-center">
     <div class="col-12 py-5">
@@ -138,6 +137,7 @@
     </div>
   </div>
   <div class="row row-icons py-5 gy-5 justify-content-center">
+    @for (item of exititngCourses; track $index) {
     <div
       data-aos="fade-up"
       class="col-12 col-lg-4 col-md-6 d-md-block d-flex justify-content-center"
@@ -153,10 +153,9 @@
           <p>3 Month</p>
         </div>
         <div class="card-body">
-          <h6 class="card-title">AWS Certified Solutions Architect</h6>
+          <h6 class="card-title">{{ item.title }}</h6>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor,
-            minima?
+            {{ item.short_description }}
           </p>
           <div class="w-50">
             <a href="#" class="d-flex align-items-center mt-3">
@@ -171,5 +170,6 @@
         </div>
       </div>
     </div>
+    }
   </div>
 </div>

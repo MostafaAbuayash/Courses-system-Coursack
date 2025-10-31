@@ -33,13 +33,29 @@
                 placeholder="Enter course title"
                 [(ngModel)]="ReactCourse[0].title"
                 name="coursetitle"
+                #coursetitle
               />
             </div>
+
             <div class="col-md-4">
               <label for="courseThumbnail" class="form-label fw-semibold"
                 >Thumbnail</label
               >
               <input id="courseThumbnail" type="file" class="form-control" />
+            </div>
+            <div class="col-md-12">
+              <label for="courseTitle" class="form-label fw-semibold"
+                >Course Description</label
+              >
+              <input
+                id="Description"
+                type="text"
+                class="form-control"
+                placeholder="Enter course Description"
+                [(ngModel)]="ReactCourse[0].short_description"
+                name="Description"
+                #Description
+              />
             </div>
           </div>
         </div>
@@ -131,7 +147,7 @@
         <button
           type="button"
           class="btn btn-sm btn-outline-primary rounded-5 px-5 py-2"
-          (click)="saveCourse()"
+          (click)="saveCourse(coursetitle.value, Description.value)"
         >
           Save
         </button>
