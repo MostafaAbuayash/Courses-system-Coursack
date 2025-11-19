@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ContentComponent } from '../list-of-courses/content/content.component';
-import { UsersComponent } from '../list-of-courses/users/users.component';
-import { InstractoursComponent } from '../list-of-courses/instractours/instractours.component';
-import { PricingComponent } from '../list-of-courses/pricing/pricing.component';
 interface Lesson {
   id: string;
   title: string;
@@ -29,28 +25,16 @@ interface Course {
   lessons_count: number;
   published_at: string | null;
   created_by: string;
+  status: string;
 }
 @Component({
-  selector: 'app-mange-course',
+  selector: 'app-content',
   standalone: true,
-  imports: [
-    FormsModule,
-    FormsModule,
-    CommonModule,
-    ContentComponent,
-    UsersComponent,
-    InstractoursComponent,
-    PricingComponent,
-  ],
-  templateUrl: './mange-course.component.html',
-  styleUrl: './mange-course.component.scss',
+  imports: [FormsModule, FormsModule, CommonModule],
+  templateUrl: './content.component.html',
+  styleUrl: './content.component.scss',
 })
-export class MangeCourseComponent {
-  content: Number = 1;
-  users: Number = 0;
-  instractors: Number = 0;
-  pricing: Number = 0;
-
+export class ContentComponent {
   ReactCourse: Course[] = [
     {
       id: Date.now(),
@@ -68,6 +52,7 @@ export class MangeCourseComponent {
       created_by: 'admin_1',
       created_at: '2025-10-29T12:00:00Z',
       updated_at: '2025-10-30T09:00:00Z',
+      status: 'unconfirmed',
     },
   ];
 
@@ -87,6 +72,7 @@ export class MangeCourseComponent {
       created_by: 'admin_1',
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
+      status: 'not-confirmed',
     };
     const existingCourses = JSON.parse(
       localStorage.getItem('ReactCourse') || '[]'
