@@ -16,7 +16,7 @@ interface Course {
   short_description: string;
   language: string;
   level: string;
-  instructors: string[];
+  instructors: any[];
   thumbnail_url: string;
   price: number;
   Module: Module[];
@@ -42,7 +42,7 @@ export class ContentComponent {
       short_description: '',
       language: 'en',
       level: '',
-      instructors: ['user_123'],
+      instructors: [],
       thumbnail_url:
         'https://pbs.twimg.com/profile_images/1217566226827759616/hM6lnfw8_400x400.jpg',
       price: 0,
@@ -52,7 +52,7 @@ export class ContentComponent {
       created_by: 'admin_1',
       created_at: '2025-10-29T12:00:00Z',
       updated_at: '2025-10-30T09:00:00Z',
-      status: 'unconfirmed',
+      status: 'pending', // IMPORTANT FIX
     },
   ];
 
@@ -63,7 +63,7 @@ export class ContentComponent {
       short_description: short_description,
       language: 'en',
       level: '',
-      instructors: ['user_123'],
+      instructors: [],
       thumbnail_url: 'https://cdn.example.com/default-thumb.jpg',
       price: 0,
       Module: [],
@@ -72,7 +72,7 @@ export class ContentComponent {
       created_by: 'admin_1',
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
-      status: 'not-confirmed',
+      status: '',
     };
     const existingCourses = JSON.parse(
       localStorage.getItem('ReactCourse') || '[]'
