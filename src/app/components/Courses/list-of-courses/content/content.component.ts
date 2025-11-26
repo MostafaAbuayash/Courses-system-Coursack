@@ -26,6 +26,7 @@ interface Course {
   published_at: string | null;
   created_by: string;
   status: string;
+  category: string;
 }
 @Component({
   selector: 'app-content',
@@ -35,6 +36,25 @@ interface Course {
   styleUrl: './content.component.scss',
 })
 export class ContentComponent {
+  courseModule: any = {
+    id: Date.now(),
+    title: '',
+    short_description: '',
+    language: 'en',
+    level: '',
+    instructors: [],
+    thumbnail_url:
+      'https://pbs.twimg.com/profile_images/1217566226827759616/hM6lnfw8_400x400.jpg',
+    price: 0,
+    Module: [],
+    lessons_count: 0,
+    published_at: null,
+    created_by: 'admin_1',
+    created_at: '2025-10-29T12:00:00Z',
+    updated_at: '2025-10-30T09:00:00Z',
+    status: 'pending', // IMPORTANT FIX
+    category: 'React',
+  };
   ReactCourse: Course[] = [
     {
       id: Date.now(),
@@ -53,11 +73,12 @@ export class ContentComponent {
       created_at: '2025-10-29T12:00:00Z',
       updated_at: '2025-10-30T09:00:00Z',
       status: 'pending', // IMPORTANT FIX
+      category: 'React',
     },
   ];
 
   saveCourse(title: string, short_description: string) {
-    const newCourse: Course = {
+    const newCourse: any = {
       id: Date.now(),
       title: title,
       short_description: short_description,
@@ -73,6 +94,7 @@ export class ContentComponent {
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
       status: '',
+      category: 'React',
     };
     const existingCourses = JSON.parse(
       localStorage.getItem('ReactCourse') || '[]'
