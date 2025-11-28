@@ -47,14 +47,6 @@ export class ListOFCoursesComponent {
       const savedData = localStorage.getItem('ReactCourse');
       this.courses = savedData ? JSON.parse(savedData) : [];
       return;
-    } else if (Statu.Status === 'All' || category.category === 'All') {
-      const savedData = localStorage.getItem('ReactCourse');
-      const allCourses = savedData ? JSON.parse(savedData) : [];
-      this.courses = allCourses.filter(
-        (course: any) =>
-          course.status === Statu.Status && course.status === Statu.Status
-      );
-      return;
     } else if (Statu.Status !== 'All' && category.category !== 'All') {
       const savedData = localStorage.getItem('ReactCourse');
       const allCourses = savedData ? JSON.parse(savedData) : [];
@@ -62,6 +54,20 @@ export class ListOFCoursesComponent {
         (course: any) =>
           course.category === category.category &&
           course.status === Statu.Status
+      );
+      return;
+    } else if (Statu.Status !== 'All' && category.category === 'All') {
+      const savedData = localStorage.getItem('ReactCourse');
+      const allCourses = savedData ? JSON.parse(savedData) : [];
+      this.courses = allCourses.filter(
+        (course: any) => course.status === Statu.Status
+      );
+      return;
+    } else if (Statu.Status === 'All' && category.category !== 'All') {
+      const savedData = localStorage.getItem('ReactCourse');
+      const allCourses = savedData ? JSON.parse(savedData) : [];
+      this.courses = allCourses.filter(
+        (course: any) => course.category === category.category
       );
       return;
     }
