@@ -16,4 +16,8 @@ export class ListOFCoursesComponent {
     this.courses = savedData ? JSON.parse(savedData) : [];
     console.log(this.courses);
   }
+  deleteCourse(index: number) {
+    this.courses.splice(index, 1);
+    localStorage.setItem('ReactCourse', JSON.stringify(this.courses));
+  }
 }

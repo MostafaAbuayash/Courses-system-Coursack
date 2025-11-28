@@ -39,4 +39,5 @@ export const routes: Routes = [
   { path: 'manageCourses', component: MangeCourseComponent },
   { path: 'addCourse', component: AddCourseComponent },
   { path: 'editCourse/:id', component: EditCoursesComponent },
+  { path: 'listOfCourses', component: ListOFCoursesComponent },
 ];

@@ -22,7 +22,7 @@
   </div>
 
   <!-- Course Rows -->
-  @for (course of courses; track course.id) {
+  @if (courses.length > 0) { @for (course of courses; track course.id) {
   <div class="course-row">
     <!-- Title -->
     <div class="col-title">
@@ -46,10 +46,12 @@
       <button class="action-btn edit" routerLink="/editCourse/{{ course.id }}">
         <i class="fa-solid fa-pen-to-square"></i>
       </button>
-      <button class="action-btn delete">
+      <button class="action-btn delete" (click)="deleteCourse($index)">
         <i class="fa-solid fa-trash"></i>
       </button>
     </div>
   </div>
+  } }@else {
+  <div class="avability">No Course Avilable</div>
   }
 </div>
