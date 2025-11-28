@@ -16,6 +16,8 @@ import { NewsContactComponent } from './components/news-contact/news-contact.com
 import { InformationPanelComponent } from './components/information-panel/information-panel.component';
 import { AdminAccountComponent } from './components/admin-account/admin-account.component';
 import { MangeCourseComponent } from './components/Courses/mange-course/mange-course.component';
+import { AddCourseComponent } from './components/Courses/add-course/add-course.component';
+import { EditCoursesComponent } from './components/Courses/edit-courses/edit-courses.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -35,4 +37,6 @@ export const routes: Routes = [
   { path: 'informationPanel', component: InformationPanelComponent },
   { path: 'adminAccount', component: AdminAccountComponent },
   { path: 'manageCourses', component: MangeCourseComponent },
+  { path: 'addCourse', component: AddCourseComponent },
+  { path: 'editCourse/:id', component: EditCoursesComponent },
 ];

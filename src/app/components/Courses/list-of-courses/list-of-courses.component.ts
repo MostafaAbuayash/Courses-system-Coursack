@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ContentComponent } from './content/content.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-list-of-courses',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './list-of-courses.component.html',
   styleUrl: './list-of-courses.component.scss',
 })

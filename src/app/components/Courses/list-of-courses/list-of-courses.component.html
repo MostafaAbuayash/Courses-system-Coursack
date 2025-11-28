@@ -8,7 +8,7 @@
       <input type="search" placeholder="Type / to search..." />
     </div>
 
-    <a href="" class="add-btn">
+    <a href="" class="add-btn" routerLink="/addCourse">
       <i class="fa-solid fa-plus"></i> Add New Course
     </a>
   </div>
@@ -43,7 +43,7 @@
     <!-- Actions -->
     <div class="col-actions">
       <button class="action-btn view"><i class="fa-solid fa-eye"></i></button>
-      <button class="action-btn edit">
+      <button class="action-btn edit" routerLink="/editCourse/{{ course.id }}">
         <i class="fa-solid fa-pen-to-square"></i>
       </button>
       <button class="action-btn delete">

@@ -1,1 +1,42 @@
-<p>edit-courses works!</p>
+<div class="row">
+  <div class="col-12">
+    <h2 class="mb-4">Manage Courses</h2>
+  </div>
+
+  <div class="col-2">
+    <div class="btn-ass d-flex flex-column gap-3 w-100 text-center rounded-5">
+      <button class="btn rounded-5 BTN-Assi w-100" (click)="content = 1">
+        content
+      </button>
+      <button
+        class="btn rounded-5 BTN-Assi w-100"
+        (click)="pricing = 0; instractors = 0; content = 0; users = 1"
+      >
+        Users
+      </button>
+      <button
+        class="btn rounded-5 BTN-Assi w-100"
+        (click)="instractors = 1; content = 0; users = 0; pricing = 0"
+      >
+        Instructor
+      </button>
+      <button
+        class="btn rounded-5 BTN-Assi w-100"
+        (click)="instractors = 0; content = 0; users = 0; pricing = 1"
+      >
+        Pricing
+      </button>
+    </div>
+  </div>
+  <div class="col-10">
+    @if (content==1) {
+    <app-content></app-content>
+    }@else if (users==1) {
+    <app-users></app-users>
+    }@else if (instractors==1) {
+    <app-instractours></app-instractours>
+    }@else if (pricing==1) {
+    <app-pricing></app-pricing>
+    }
+  </div>
+</div>
