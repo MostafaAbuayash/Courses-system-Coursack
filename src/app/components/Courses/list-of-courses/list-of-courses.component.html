@@ -16,8 +16,28 @@
   <!-- Header -->
   <div class="table-header d-flex justify-content-between">
     <div class="col-header">Title</div>
-    <div class="col-header">Category</div>
-    <div class="col-header">Status</div>
+    <select
+      name="category"
+      id="category"
+      [(ngModel)]="CategoryFilter"
+      (change)="changeStatusFilter(statusFilter, CategoryFilter)"
+      class="custom-select"
+    >
+      @for (category of Cateories; track $index) {
+      <option [ngValue]="{category}">{{ category }}</option>
+      }
+    </select>
+    <select
+      name="Status"
+      id="Status"
+      [(ngModel)]="statusFilter"
+      class="custom-select"
+      (change)="changeStatusFilter(statusFilter, CategoryFilter)"
+    >
+      @for (Status of Status; track $index) {
+      <option [ngValue]="{Status}">{{ Status }}</option>
+      }
+    </select>
     <div class="col-header">Action</div>
   </div>
 
