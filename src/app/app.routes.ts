@@ -8,6 +8,16 @@ import { ResetComponent } from './components/Auth/reset/reset.component';
 import { StudentaccComponent } from './components/Auth/studentacc/studentacc.component';
 import { SearchComponent } from './components/search/search.component';
 import { ListOFCoursesComponent } from './components/Courses/list-of-courses/list-of-courses.component';
+import { CoursesPageComponent } from './components/Courses/courses-page/courses-page.component';
+import { AssignmentComponent } from './components/assignment/assignment.component';
+import { StudentPageComponent } from './components/student-page/student-page.component';
+import { ManageAccountsComponent } from './components/manage-accounts/manage-accounts.component';
+import { NewsContactComponent } from './components/news-contact/news-contact.component';
+import { InformationPanelComponent } from './components/information-panel/information-panel.component';
+import { AdminAccountComponent } from './components/admin-account/admin-account.component';
+import { MangeCourseComponent } from './components/Courses/mange-course/mange-course.component';
+import { AddCourseComponent } from './components/Courses/add-course/add-course.component';
+import { EditCoursesComponent } from './components/Courses/edit-courses/edit-courses.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +28,16 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'reset', component: ResetComponent },
   { path: 'student', component: StudentaccComponent },
-  { path: 'courses', component: ListOFCoursesComponent },
-  { path: 'search', component: SearchComponent }
+  { path: 'courses', component: CoursesPageComponent },
+  { path: 'search', component: SearchComponent },
+  { path: 'assignments', component: AssignmentComponent },
+  { path: 'myaccount', component: StudentPageComponent },
+  { path: 'manageaccounts', component: ManageAccountsComponent },
+  { path: 'Contactus', component: NewsContactComponent },
+  { path: 'informationPanel', component: InformationPanelComponent },
+  { path: 'adminAccount', component: AdminAccountComponent },
+  { path: 'manageCourses', component: MangeCourseComponent },
+  { path: 'addCourse', component: AddCourseComponent },
+  { path: 'editCourse/:id', component: EditCoursesComponent },
+  { path: 'listOfCourses', component: ListOFCoursesComponent },
 ];

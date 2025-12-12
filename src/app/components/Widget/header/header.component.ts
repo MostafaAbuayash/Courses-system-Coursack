@@ -6,6 +6,13 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  isLogin: boolean = true;
+    menuActive = false;
+
+  toggleMenu() {
+    this.menuActive = !this.menuActive;
+  }
+}

@@ -1,1 +1,78 @@
-<p>list-of-courses works!</p>
+<div class="container">
+  <!-- Top Bar -->
+  <div class="top-bar mb-4">
+    <div class="title">All Courses</div>
+
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="search" placeholder="Type / to search..." />
+    </div>
+
+    <a href="" class="add-btn" routerLink="/addCourse">
+      <i class="fa-solid fa-plus"></i> Add New Course
+    </a>
+  </div>
+
+  <!-- Header -->
+  <div class="table-header d-flex justify-content-between">
+    <div class="col-header">Title</div>
+
+    <select
+      name="category"
+      id="category"
+      [(ngModel)]="CategoryFilter"
+      (change)="changeStatusFilter(statusFilter, CategoryFilter)"
+      class="custom-select"
+    >
+      @for (category of Cateories; track $index) {
+      <option [ngValue]="{category}">{{ category }}</option>
+      }
+    </select>
+    <select
+      name="Status"
+      id="Status"
+      [(ngModel)]="statusFilter"
+      class="custom-select"
+      (change)="changeStatusFilter(statusFilter, CategoryFilter)"
+    >
+      @for (Status of Status; track $index) {
+      <option [ngValue]="{Status}">{{ Status }}</option>
+      }
+    </select>
+    <div class="col-header">Action</div>
+  </div>
+
+  <!-- Course Rows -->
+  @if (courses.length > 0) { @for (course of courses; track course.id) {
+  <div class="course-row">
+    <!-- Title -->
+    <div class="col-title">
+      <span class="index">{{ $index + 1 }}.</span>
+      <span class="title">{{ course.title }}</span>
+    </div>
+
+    <!-- Category -->
+    <div class="col-category">
+      {{ course.category }}
+    </div>
+
+    <!-- Status -->
+    <div class="col-status" [class.active]="course.status === 'Active'">
+      {{ course.status }}
+    </div>
+
+    <!-- Actions -->
+    <div class="col-actions">
+      <button class="action-btn view"><i class="fa-solid fa-eye"></i></button>
+      <button class="action-btn edit" routerLink="/editCourse/{{ course.id }}">
+        <i class="fa-solid fa-pen-to-square"></i>
+      </button>
+      <button class="action-btn delete" (click)="deleteCourse($index)">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </div>
+  </div>
+  } }@else {
+  <div class="avability">No Course Avilable</div>
+  }
+</div>

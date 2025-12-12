@@ -1,0 +1,170 @@
+/* 🌸 Sidebar container */
+.btn-ass {
+  background-color: #ffd6e8;
+  width: 100%;
+  border-radius: 25px;
+  padding: 20px 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* 🌸 Buttons inside sidebar */
+.BTN-Assi {
+  background-color: #ffd6e8 !important;
+  color: #ef3e76 !important;
+  border: 1px solid #ef3e76 !important;
+  border-radius: 20px;
+  padding: 12px !important;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.BTN-Assi:hover {
+  background-color: #ef3e76 !important;
+  color: #fff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(239, 62, 118, 0.25);
+}
+
+/* 🌸 Main area */
+.p-4.bg-light.rounded-4.shadow-sm {
+  background-color: #fff !important;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.p-4.bg-light.rounded-4.shadow-sm:hover {
+  transform: translateY(-2px);
+}
+
+/* 🌸 Input styling */
+.course-form input[type="text"],
+.course-form input[type="file"] {
+  border-radius: 10px;
+  border: 1px solid #ef3e76;
+  box-shadow: none;
+}
+
+.course-form input:focus {
+  border-color: #ff6f9c;
+  box-shadow: 0 0 6px rgba(239, 62, 118, 0.3);
+}
+
+/* 🌸 Module section */
+.module-section {
+  border-top: 2px dashed #ffd6e8;
+  padding-top: 20px;
+}
+
+.module-section h5 {
+  color: #232a42;
+  font-weight: 600;
+}
+
+/* 🌸 Add buttons */
+.btn-outline-primary {
+  color: #ef3e76 !important;
+  border-color: #ef3e76 !important;
+  border-radius: 25px;
+  font-weight: 600;
+}
+
+.btn-outline-primary:hover {
+  background-color: #ef3e76 !important;
+  color: #fff !important;
+}
+
+/* 🌸 File upload button */
+input[type="file"]::-webkit-file-upload-button {
+  background-color: #ef3e76;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #ff6f9c;
+}
+
+/* 🌸 Title */
+h2 {
+  color: #ef3e76;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.select-box select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #cfcfcf;
+  background: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+  border-color: #ef3e76 !important;
+}
+
+.select-box select:focus {
+  border-color: #ff6f9c;
+  box-shadow: 0 0 4px rgba(255, 111, 156, 0.6);
+}
+
+/* 🌸 Responsive adjustments */
+@media (max-width: 768px) {
+  .d-flex.gap-2 {
+    flex-direction: column;
+  }
+  .btn-ass {
+    padding: 10px;
+  }
+  .BTN-Assi {
+    font-size: 14px;
+    padding: 10px !important;
+  }
+}
+.btn-lesson {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border: 2px solid #dee2e6;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  h6 {
+    margin: 0;
+    color: #495057;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  &:hover {
+    background: linear-gradient(135deg, #e9ecef, #dee2e6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    h6 {
+      color: #212529;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  &.active {
+    background: #6610f2;
+    color: #fff;
+    border-color: #6610f2;
+
+    h6 {
+      color: #fff;
+    }
+  }
+}

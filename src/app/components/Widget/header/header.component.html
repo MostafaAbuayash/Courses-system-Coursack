@@ -1,13 +1,27 @@
 <header class="header">
   <section class="flex">
-    <a class="logo" routerLink="/home"><img src="assets/images/logo.png" alt="Logo" class="logo"/></a>
-    <a routerLink="/login" class="Account-btn">Account</a>
-    <nav class="navbar">
-      <button class="search" routerLink="/search"><i class="fa-duotone fa-solid fa-magnifying-glass"></i>Type <kbd class="search/">/</kbd> to search...</button>
+    <a class="logo" routerLink="/home">
+      <img src="assets/images/logo.png" alt="Logo" class="logo" />
+    </a>
+
+    <button class="menu-btn" (click)="toggleMenu()">☰</button>
+
+    <nav class="navbar" [class.active]="menuActive">
+      <button class="close-btn" (click)="toggleMenu()">✕</button>
+      <button class="search" routerLink="/search">
+        <i class="fa-duotone fa-solid fa-magnifying-glass"></i>
+        Type <kbd>/</kbd> to search...
+      </button>
       <a routerLink="/home">Home</a>
       <a routerLink="/courses">Courses</a>
-      <a routerLink="/about">About Us</a>
+      <a routerLink="/manageaccounts">Manage Accounts</a>
+      <a routerLink="/informationPanel">Information Panel</a>
+      <a routerLink="/adminAccount">Admin Account</a>
       <a routerLink="/contact">Get in Touch</a>
+      <a routerLink="/about">About Us</a>
+      <a routerLink="/Contactus">Contact Us</a>
     </nav>
+
+    <a routerLink="/login" class="Account-btn">Account</a>
   </section>
 </header>
