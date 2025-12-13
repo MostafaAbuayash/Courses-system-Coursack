@@ -13,13 +13,15 @@ import { FormsModule } from '@angular/forms';
 export class ListOFCoursesComponent {
   courses: any[] = [];
   Cateories: string[] = [
-    'All',
     'React',
     'Angular',
     'Vue',
+    'JavaScript',
+    'TypeScript',
     'Node.js',
     'Python',
     'Django',
+    'Flask',
   ];
   Status: string[] = [
     'All',

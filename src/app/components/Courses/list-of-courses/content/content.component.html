@@ -47,6 +47,25 @@
               </select>
             </div>
           </div>
+          <div class="col-3">
+            <label for="courseThumbnail" class="form-label fw-semibold"
+              >Course Category
+            </label>
+
+            <div class="select-box">
+              <select
+                name=""
+                id=""
+                [(ngModel)]="CategorySelected"
+                #category
+                name="category"
+              >
+                @for (options of categry; track $index) {
+                <option [ngValue]="{options}">{{ options }}</option>
+                }
+              </select>
+            </div>
+          </div>
           <div class="col-md-12">
             <label for="courseTitle" class="form-label fw-semibold"
               >Course Description</label
