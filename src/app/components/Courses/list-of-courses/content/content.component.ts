@@ -44,8 +44,20 @@ export class ContentComponent {
     'in review',
     'draft',
   ];
+  categry: string[] = [
+    'React',
+    'Angular',
+    'Vue',
+    'JavaScript',
+    'TypeScript',
+    'Node.js',
+    'Python',
+    'Django',
+    'Flask',
+  ];
   levels: string[] = ['Beginner', 'Intermediate', 'Advanced'];
   statusSelected: any = {};
+  CategorySelected: any = {};
 
   ReactCourse: Course[] = [
     {
@@ -65,12 +77,14 @@ export class ContentComponent {
       created_at: '2025-10-29T12:00:00Z',
       updated_at: '2025-10-30T09:00:00Z',
       status: this.statusSelected.options,
-      category: 'React',
+      category: this.CategorySelected.options,
     },
   ];
 
   saveCourse(title: string, short_description: string, status: string) {
     this.ReactCourse[0].status = this.statusSelected.options;
+    this.ReactCourse[0].category = this.CategorySelected.options;
+
     const existingCourses = JSON.parse(
       localStorage.getItem('ReactCourse') || '[]'
     );
@@ -97,7 +111,7 @@ export class ContentComponent {
         created_at: '2025-10-29T12:00:00Z',
         updated_at: '2025-10-30T09:00:00Z',
         status: this.statusSelected.options,
-        category: 'React',
+        category: this.CategorySelected.options,
       },
     ];
   }
