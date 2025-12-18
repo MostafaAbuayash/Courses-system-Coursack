@@ -1,0 +1,15 @@
+
+<p>available-courses works!</p>
+<div class="course-container">
+    <a [routerLink]="['/course',course.id]" *ngFor="let course of courses">
+<div class="course-card">
+    <img [src] = "course.image" [alt]="course.title" class="course-image" >
+    <h2 class="course-title">{{course.title}}</h2>
+    <p class="description">{{course.description}}</p>
+    <p class="price">{{course.price}} $</p>
+</div>
+
+    </a>
+
+</div>
+
