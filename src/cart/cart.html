@@ -1,0 +1,243 @@
+<div class="cart-container">
+  <h1>My Courses Bag</h1>
+  <hr>
+  <table>
+  <thead>
+        <tr>
+          <th>Image</th>
+          <th>Course</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of courses">
+          <td class="image-cell">
+            <img 
+              *ngIf="course.image" 
+              [src]="course.image" 
+              [alt]="course.title"
+              class="course-image"
+            />
+          </td>
+          <td class="title-cell">
+            <a [routerLink]="['/course', course.id]" class="course-link">
+              {{ course.title }}
+            </a>
+          </td>
+          <td class="description-cell">{{ course.description }}</td>
+          <td class="price-cell">{{ formatPrice(course.price) }}</td>
+          <td class="action-cell">
+            <button (click)="removeCourse(course.id)" class="remove-button">
+              Remove
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+      <!-- Payment Button -->
+      <div class="payment-actions">
+        <button 
+          (click)="openPaymentForm()" 
+          class="pay-button"
+          [disabled]="isProcessing || courses.length === 0 || showPaymentForm"
+        >
+          💳 Proceed to Payment
+        </button>
+      </div>
+    </div>
+
+  <!-- Payment Form Modal -->
+  <div *ngIf="showPaymentForm" class="payment-modal-overlay" (click)="closePaymentForm()">
+    <div class="payment-modal" (click)="$event.stopPropagation()">
+      <div class="payment-modal-header">
+        <h2>Payment Information</h2>
+        <button class="close-button" (click)="closePaymentForm()">×</button>
+      </div>
+
+      <div class="payment-modal-body">
+        <!-- Order Summary -->
+        <div class="order-summary-box">
+          <h3>Order Summary</h3>
+          <div class="summary-item" *ngFor="let course of courses">
+            <span>{{ course.title }}</span>
+            <span>{{ formatPrice(course.price) }}</span>
+          </div>
+          <div class="summary-total">
+            <span>Total:</span>
+            <span class="total-amount">{{ formatPrice(totalPrice) }}</span>
+          </div>
+        </div>
+
+        <!-- Payment Method Selection -->
+        <div class="form-group">
+          <label>Payment Method *</label>
+          <div class="payment-methods">
+            <label class="payment-method-option">
+              <input 
+                type="radio" 
+                name="paymentMethod" 
+                value="credit-card"
+                [(ngModel)]="paymentMethod"
+              />
+              <span>💳 Credit Card</span>
+            </label>
+            <label class="payment-method-option">
+              <input 
+                type="radio" 
+                name="paymentMethod" 
+                value="paypal"
+                [(ngModel)]="paymentMethod"
+              />
+              <span>🅿️ PayPal</span>
+            </label>
+            <label class="payment-method-option">
+              <input 
+                type="radio" 
+                name="paymentMethod" 
+                value="bank-transfer"
+                [(ngModel)]="paymentMethod"
+              />
+              <span>🏦 Bank Transfer</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Credit Card Form (shown when credit card is selected) -->
+        <div *ngIf="paymentMethod === 'credit-card'" class="credit-card-form">
+          <div class="form-group">
+            <label>Card Number *</label>
+            <input 
+              type="text" 
+              [(ngModel)]="cardNumber"
+              (input)="formatCardNumber($event)"
+              placeholder="1234 5678 9012 3456"
+              maxlength="19"
+              class="form-input"
+              [class.error]="formErrors.cardNumber"
+            />
+            <span *ngIf="formErrors.cardNumber" class="error-message">{{ formErrors.cardNumber }}</span>
+          </div>
+
+          <div class="form-group">
+            <label>Cardholder Name *</label>
+            <input 
+              type="text" 
+              [(ngModel)]="cardHolderName"
+              placeholder="John Doe"
+              class="form-input"
+              [class.error]="formErrors.cardHolderName"
+            />
+            <span *ngIf="formErrors.cardHolderName" class="error-message">{{ formErrors.cardHolderName }}</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Expiry Date *</label>
+              <input 
+                type="text" 
+                [(ngModel)]="expiryDate"
+                (input)="formatExpiryDate($event)"
+                placeholder="MM/YY"
+                maxlength="5"
+                class="form-input"
+                [class.error]="formErrors.expiryDate"
+              />
+              <span *ngIf="formErrors.expiryDate" class="error-message">{{ formErrors.expiryDate }}</span>
+            </div>
+
+            <div class="form-group">
+              <label>CVV *</label>
+              <input 
+                type="text" 
+                [(ngModel)]="cvv"
+                placeholder="123"
+                maxlength="4"
+                class="form-input"
+                [class.error]="formErrors.cvv"
+              />
+              <span *ngIf="formErrors.cvv" class="error-message">{{ formErrors.cvv }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Billing Address -->
+        <div class="form-section">
+          <h3>Billing Address</h3>
+          
+          <div class="form-group">
+            <label>Address *</label>
+            <input 
+              type="text" 
+              [(ngModel)]="billingAddress"
+              placeholder="123 Main Street"
+              class="form-input"
+              [class.error]="formErrors.billingAddress"
+            />
+            <span *ngIf="formErrors.billingAddress" class="error-message">{{ formErrors.billingAddress }}</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>City *</label>
+              <input 
+                type="text" 
+                [(ngModel)]="city"
+                placeholder="New York"
+                class="form-input"
+                [class.error]="formErrors.city"
+              />
+              <span *ngIf="formErrors.city" class="error-message">{{ formErrors.city }}</span>
+            </div>
+
+            <div class="form-group">
+              <label>Zip Code *</label>
+              <input 
+                type="text" 
+                [(ngModel)]="zipCode"
+                placeholder="10001"
+                class="form-input"
+                [class.error]="formErrors.zipCode"
+              />
+              <span *ngIf="formErrors.zipCode" class="error-message">{{ formErrors.zipCode }}</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Country *</label>
+            <input 
+              type="text" 
+              [(ngModel)]="country"
+              placeholder="United States"
+              class="form-input"
+              [class.error]="formErrors.country"
+            />
+            <span *ngIf="formErrors.country" class="error-message">{{ formErrors.country }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-modal-footer">
+        <button class="cancel-button" (click)="closePaymentForm()">Cancel</button>
+        <button 
+          class="submit-payment-button"
+          (click)="processPayment()"
+          [disabled]="isProcessing"
+        >
+          <span *ngIf="!isProcessing">💳 Pay {{ formatPrice(totalPrice) }}</span>
+          <span *ngIf="isProcessing">⏳ Processing Payment...</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Message -->
+  <div *ngIf="paymentSuccess && !showPaymentForm" class="success-message-overlay">
+    <div class="success-message-box">
+      <div class="success-icon">✅</div>
+      <h2>Payment Successful!</h2>
+      <p>Your courses are now available. Thank you for your purchase!</p>
+    </div>
+  </div>

@@ -1,0 +1,25 @@
+.course-container{
+    display:flex;
+    background-color: gray;
+    justify-content :center;
+    flex-wrap:wrap;
+    gap:20px;
+    padding:20px;
+}
+.course-card{
+    background-color:gray;
+    border-radius:8px;
+    width : 280px;
+}
+img{
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    border-radius:8px
+
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
