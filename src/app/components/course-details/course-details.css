@@ -1,0 +1,20 @@
+body{
+  display:flex;
+  background-color: gray;
+  justify-content: center;
+  padding:50px;
+  margin:50px;
+      border: solid 5px;
+
+}
+.course-details-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    padding:20px;
+    border: solid 5px;
+}
+.course-image-container{
+  border:solid 5px;
+}

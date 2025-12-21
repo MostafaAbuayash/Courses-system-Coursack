@@ -1,0 +1,67 @@
+<div class="course-details-container">
+  <!-- Back Button: RouterLink navigates without page reload -->
+  <div class="back-button-container">
+    <a routerLink="/available-courses" class="back-button">
+      ← Back to Courses
+    </a>
+  </div>
+
+  <!-- Main Content: *ngIf shows content only if course exists -->
+  <!-- else notFound shows error message if course is not found -->
+  <div class="course-details-content" *ngIf="course; else notFound">
+    
+    <!-- Left Side: Course Image -->
+    <div class="course-image-container">
+      <img 
+      [src]="course.image"        
+        [alt]="course.title"        
+        class="course-detail-image"
+      />
+    </div>
+
+    <!-- Right Side: Course Information -->
+    <div class="course-info">
+      <!-- Course Title -->
+      <h1 class="course-title">{{ course.title }}</h1>
+      
+      <!-- Course Description -->
+      <div class="course-description">
+        <h2>About This Course</h2>
+        <p>{{ course.description }}</p>
+      </div>
+
+      <!-- Course Features List -->
+      <div class="course-features">
+        <h2>What You'll Learn</h2>
+        <ul>
+          <li>Comprehensive understanding of the topic</li>
+          <li>Hands-on practical exercises</li>
+          <li>Real-world project examples</li>
+          <li>Expert guidance and support</li>
+        </ul>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <!-- (click) = event binding - calls enrollCourse() method -->
+        <button class="enroll-button" (click)="enrollCourse()">
+          Enroll Now
+        </button>
+        <button class="share-button">
+          Share Course
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Error Template: Shows if course is not found -->
+  <ng-template #notFound>
+    <div class="not-found">
+      <h2>Course Not Found</h2>
+      <p>Sorry, the course you're looking for doesn't exist.</p>
+      <a routerLink="/available-courses" class="back-button">
+        ← Back to Courses
+      </a>
+    </div>
+  </ng-template>
+</div>
